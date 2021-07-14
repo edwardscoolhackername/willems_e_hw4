@@ -1,0 +1,40 @@
+* { border: none; margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100vh; }
+
+body {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.hidden { display: none; }
+
+main {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+main > div {
+  flex: 1;
+  border: thin solid black;
+  padding: 1em;
+}
+
+.box > span {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 0.5em;
+  background-color: blue;
+  color: white;
+}
+
+.box:nth-of-type(3) > span { display: none; }
+.box:nth-of-type(4) > span { display: none; }
+
+/* 641 is first break point */
+
+@media screen and (min-width: 641px) {
+  main { flex-direction: row; }
+  /* Turn on box 3 and 4 again */
+}
