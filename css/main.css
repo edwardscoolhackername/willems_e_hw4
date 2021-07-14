@@ -25,16 +25,26 @@ main > div {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 0.5em;
-  background-color: blue;
   color: white;
 }
-
+.box:nth-of-type(1) > span { background-color: #EE45F7; }
+.box:nth-of-type(2) > span { background-color: red; }
 .box:nth-of-type(3) > span { display: none; }
 .box:nth-of-type(4) > span { display: none; }
 
 /* 641 is first break point */
 
 @media screen and (min-width: 641px) {
-  main { flex-direction: row; }
+  main {
+    flex-direction: row;
+  }
   /* Turn on box 3 and 4 again */
+  .box:nth-of-type(1) > span { background-color: blue; }
+  .box:nth-of-type(2) > span { background-color: #700CC7; }
+  .box:nth-of-type(3) > span { display: inline-block; background-color: grey; }
+  .box:nth-of-type(4) > span { display: inline-block; background-color: #613B23; }
+}
+
+@media screen and (min-width: 1140px) {
+  .wrapper { width: 1140px; }
 }
